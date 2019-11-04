@@ -4,7 +4,7 @@ namespace Hamlet\Http\Workerman\Bootstraps;
 
 use Hamlet\Http\Applications\AbstractApplication;
 use Hamlet\Http\Requests\DefaultRequest;
-use Hamlet\Http\Swoole\Writers\WorkermanResponseWriter;
+use Hamlet\Http\Workerman\Writers\WorkermanResponseWriter;
 use Workerman\Connection\TcpConnection;
 use Workerman\Worker;
 

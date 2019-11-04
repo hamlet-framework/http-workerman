@@ -1,6 +1,6 @@
 <?php
 
-namespace Hamlet\Http\Swoole\Writers;
+namespace Hamlet\Http\Workerman\Writers;
 
 use Hamlet\Http\Writers\ResponseWriter;
 use Workerman\Connection\TcpConnection;
