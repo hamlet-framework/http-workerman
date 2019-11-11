@@ -19,7 +19,7 @@
   },
   "require": {
     "php": "^7",
-    "hamlet-framework/http": "dev-master",
+    "hamlet-framework/http": "@stable",
     "workerman/workerman": "dev-master"
   },
   "autoload": {
