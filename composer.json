@@ -10,7 +10,6 @@
       "email": "info@kartashov.com"
     }
   ],
-  "minimum-stability": "dev",
   "config": {
     "discard-changes": true,
     "optimize-autoloader": true,
@@ -20,7 +19,7 @@
   "require": {
     "php": "^7",
     "hamlet-framework/http": "@stable",
-    "workerman/workerman": "dev-master"
+    "workerman/workerman": "@stable"
   },
   "autoload": {
     "psr-4": {
