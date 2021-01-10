@@ -74,12 +74,8 @@ class WorkermanResponseWriter implements ResponseWriter
      */
     public function end()
     {
-        Http::responseCode($this->statusCode);
         unset($this->headers['Content-Length']);
-        foreach ($this->headers as $key => $value) {
-            Http::header($key . ': ' . $value);
-        }
-        $this->connection->send($this->payload);
+        $this->connection->send(new Http\Response($this->statusCode, $this->headers, $this->payload));
     }
 
     /**
@@ -94,6 +90,7 @@ class WorkermanResponseWriter implements ResponseWriter
      */
     public function cookie(string $name, string $value, int $expires, string $path, string $domain = '', bool $secure = false, bool $httpOnly = false)
     {
-        Http::setcookie($name, $value, $expires, $path, $domain, $secure, $httpOnly);
+        // @todo implement
+        // Http::setcookie($name, $value, $expires, $path, $domain, $secure, $httpOnly);
     }
 }
