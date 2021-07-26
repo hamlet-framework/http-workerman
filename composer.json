@@ -19,11 +19,12 @@
   "require": {
     "php": "^7 || ^8",
     "hamlet-framework/http": "@stable",
-    "workerman/workerman": "^4"
+    "workerman/workerman": "@stable"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "@stable",
-    "php-parallel-lint/php-parallel-lint": "@stable"
+    "php-parallel-lint/php-parallel-lint": "@stable",
+    "vimeo/psalm": "@stable"
   },
   "autoload": {
     "psr-4": {

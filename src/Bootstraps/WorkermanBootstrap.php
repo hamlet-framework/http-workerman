@@ -19,6 +19,11 @@ final class WorkermanBootstrap
      * @param int $port
      * @param AbstractApplication $application
      * @return void
+     * @psalm-suppress ForbiddenCode
+     * @psalm-suppress InvalidOperand
+     * @psalm-suppress MissingClosureReturnType
+     * @psalm-suppress PossiblyInvalidPropertyAssignmentValue
+     * @psalm-suppress PossiblyNullOperand
      */
     public static function run(string $host, int $port, AbstractApplication $application)
     {
