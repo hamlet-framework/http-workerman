@@ -3,9 +3,10 @@
 namespace Hamlet\Http\Workerman\Bootstraps;
 
 use Hamlet\Http\Applications\AbstractApplication;
-use Hamlet\Http\Requests\DefaultRequest;
+use Hamlet\Http\Workerman\Requests\WorkermanRequest;
 use Hamlet\Http\Workerman\Writers\WorkermanResponseWriter;
 use Workerman\Connection\TcpConnection;
+use Workerman\Protocols\Http\Request;
 use Workerman\Worker;
 
 final class WorkermanBootstrap
@@ -29,8 +30,8 @@ final class WorkermanBootstrap
     {
         $worker = new Worker('http://' . $host . ':' . $port);
         $worker->count = shell_exec('nproc') * 3;
-        $worker->onMessage = static function (TcpConnection $connection) use ($application) {
-            $request = new DefaultRequest();
+        $worker->onMessage = static function (TcpConnection $connection, Request $request) use ($application) {
+            $request = new WorkermanRequest($request);
             $writer = new WorkermanResponseWriter($connection);
             $response = $application->run($request);
             $application->output($request, $response, $writer);
